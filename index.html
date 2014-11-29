@@ -45,11 +45,13 @@
       App.usMaxVolLng = 180;
 
       var MY_MAPTYPE_ID = 'cool';
-      var audio = new Audio("/assets/sound/sample.wav");
+      var audio = new Audio("/assets/sound/output.wav");
       audio.volume = 0;
 
       var map;
       var americaOverlay;
+
+      var imageBounds;
 
       function initialize() {
         var mapOptions = {
@@ -69,7 +71,7 @@
         google.maps.event.addListener(map, 'mousemove', mylistener);
         google.maps.event.addListener(map, 'click', myClickListener);
 
-        var imageBounds = new google.maps.LatLngBounds(
+        imageBounds = new google.maps.LatLngBounds(
           new google.maps.LatLng(24.712216,-125.22655),
           new google.maps.LatLng(49.773941,-61.12544));
 
@@ -88,28 +90,32 @@
         var usLatRange = (mouseLat > 30) && (mouseLat < 50);
         var usLngRange = mouseLng > -125 && mouseLng < -70;
 
+        /**
+        var isZoomed = false;
+        if (mouseLng < 0 && !isZoomed) {
+          var myLatlng = new google.maps.LatLng(mouseLat, mouseLng);
+          map.setCenter(myLatlng);
+          map.setZoom(3);
+          isZoomed = true;
+        }
+        **/
+
         if (usLatRange && usLngRange) {
           americaOverlay.setMap(map);
-          //map.setZoom(4);
           audio.play(); 
           var limit = (180 - Math.abs(mouseLng)) * 0.01;
-
           var vol = 1 - limit;
           if (vol == 0) {
             vol = 0.5;
           }
-          console.log(vol);
           audio.volume = vol;
+          audio.loop = true;
         } else {
           americaOverlay.setMap(null);
           audio.pause(); 
         }
       }
 
-      function hyoji() {
-      } 
-
-      setInterval("hyoji()",200);
     </script>
   </head>
   <body onload="initialize()">
