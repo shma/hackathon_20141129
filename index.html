@@ -7,10 +7,18 @@
       body { height: 100%; margin: 0; padding: 0 }
       #map_canvas { height: 100% }
     </style>
+    <script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/uikit.css">
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2ILGksgjm7TFO-bC6DibhBA2B1GwKON8&sensor=TRUE_OR_FALSE">
     </script>
     <script type="text/javascript">
+      jQuery("#disp").click(function() {
+          console.log('hi');
+      });
+
       // Google Map APIのスタイル変更
       var stylez = [
         {
@@ -30,7 +38,7 @@
           {
           "featureType": "water",
           "stylers": [
-            { "color": "#ffffff" }
+            { "color": "#fefefe" }
           ]
           },{
           "featureType": "road",
@@ -41,43 +49,100 @@
         }
       ];
 
-      var App = {};
-      App.usMaxVolLng = 180;
-
       var MY_MAPTYPE_ID = 'cool';
-      var audio = new Audio("/assets/sound/output.wav");
-      audio.volume = 0;
 
+
+      // Overlay 座標設定
+      var App = {};
+      App.japanCenterLat = "35.6";
+      App.japanCenterLng = "139.6";
+      App.AmericaLeftLat = "24.712216";
+      App.AmericaLeftLng = "-125.22655";
+      App.AmericaRightLat = "49.773941";
+      App.AmericaRightLng = "-66.12544";
+      App.AustraliaLeftLat = "-40.012216";
+      App.AustraliaLeftLng = "111.22655";
+      App.AustraliaRightLat = "-10.973941";
+      App.AustraliaRightLng = "154.12544";
+      App.EnglandLeftLat = "50.012216";
+      App.EnglandLeftLng = "-8.22655";
+      App.EnglandRightLat = "58.973941";
+      App.EnglandRightLng = "2.12544";
+
+      // 音楽設定
+      var americaAudio = new Audio("/assets/sound/USD_JPY.wav");
+      americaAudio.volume = 1;
+      americaAudio.loop = false;
+
+      var asAudio = new Audio("/assets/sound/AUD_JPY.wav");
+      asAudio.volume = 1;
+      asAudio.loop = false;
+
+      var engAudio = new Audio("/assets/sound/GBP_JPY.wav");
+      engAudio.volume = 1;
+      engAudio.loop = false;
+
+      // Mapの初期化
       var map;
-      var americaOverlay;
-
-      var imageBounds;
 
       function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(35.6, 139.6),
+          // 日本を中心にする
+          center: new google.maps.LatLng(App.japanCenterLat, App.japanCenterLng),
           zoom: 2,
-          mapTypeId: MY_MAPTYPE_ID
+          mapTypeId: MY_MAPTYPE_ID,
+          disableDefaultUI: true,
+          mapTypeControl: false
         };
         map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
 
+        // このへんはスタイル変更している
         var styledMapOptions = {
           name: "type2"
         };
         var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
         map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
 
+        // EventListener登録
         google.maps.event.addListener(map, 'mousemove', mylistener);
         google.maps.event.addListener(map, 'click', myClickListener);
 
-        imageBounds = new google.maps.LatLngBounds(
-          new google.maps.LatLng(24.712216,-125.22655),
-          new google.maps.LatLng(49.773941,-61.12544));
+        // Americaのオーバーレイ登録
+        americaImageBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(App.AmericaLeftLat, App.AmericaLeftLng),
+          new google.maps.LatLng(App.AmericaRightLat, App.AmericaRightLng));
+        americaOverlay1 = new google.maps.GroundOverlay("/assets/img/america.png", americaImageBounds);
+        americaOverlay2 = new google.maps.GroundOverlay("/assets/img/america_glitch1.png", americaImageBounds);
+        americaOverlay3 = new google.maps.GroundOverlay("/assets/img/america_glitch2.png", americaImageBounds);
+        americaOverlay4 = new google.maps.GroundOverlay("/assets/img/america_glitch3.png", americaImageBounds);
+        americaOverlay5 = new google.maps.GroundOverlay("/assets/img/america_glitch4.png", americaImageBounds);
 
-        americaOverlay = new google.maps.GroundOverlay("/assets/img/america.png", imageBounds);
+        // Autraliaのオーバーレイ
+        australiaImageBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(App.AustraliaLeftLat, App.AustraliaLeftLng),
+          new google.maps.LatLng(App.AustraliaRightLat, App.AustraliaRightLng));
+        australiaOverlay1 = new google.maps.GroundOverlay("/assets/img/australia.png", australiaImageBounds);
+        australiaOverlay2 = new google.maps.GroundOverlay("/assets/img/australia_glitch1.png", australiaImageBounds);
+        australiaOverlay3 = new google.maps.GroundOverlay("/assets/img/australia_glitch2.png", australiaImageBounds);
+        australiaOverlay4 = new google.maps.GroundOverlay("/assets/img/australia_glitch3.png", australiaImageBounds);
+        australiaOverlay5 = new google.maps.GroundOverlay("/assets/img/australia_glitch4.png", australiaImageBounds);
+
+        // Autraliaのオーバーレイ
+        englandImageBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(App.EnglandLeftLat, App.EnglandLeftLng),
+          new google.maps.LatLng(App.EnglandRightLat, App.EnglandRightLng));
+        englandOverlay1 = new google.maps.GroundOverlay("/assets/img/england.png", englandImageBounds);
+        englandOverlay2 = new google.maps.GroundOverlay("/assets/img/england_glitch1.png", englandImageBounds);
+        englandOverlay3 = new google.maps.GroundOverlay("/assets/img/england_glitch2.png", englandImageBounds);
+        englandOverlay4 = new google.maps.GroundOverlay("/assets/img/england_glitch3.png", englandImageBounds);
+        englandOverlay5 = new google.maps.GroundOverlay("/assets/img/england_glitch4.png", englandImageBounds);
       }
 
+      var glitchType = "";
+      var beforeGlitch = "";
+
+      // Debug用
       function myClickListener(event) {
         console.log("LAT" + event.latLng.lat()); 
         console.log("LNG" + event.latLng.lng()); 
@@ -88,37 +153,93 @@
         mouseLng = event.latLng.lng();
 
         var usLatRange = (mouseLat > 30) && (mouseLat < 50);
-        var usLngRange = mouseLng > -125 && mouseLng < -70;
+        var usLngRange = mouseLng > -135 && mouseLng < -70;
 
-        /**
-        var isZoomed = false;
-        if (mouseLng < 0 && !isZoomed) {
-          var myLatlng = new google.maps.LatLng(mouseLat, mouseLng);
-          map.setCenter(myLatlng);
-          map.setZoom(3);
-          isZoomed = true;
-        }
-        **/
-
+        var choosedOverlay = americaOverlay1;
         if (usLatRange && usLngRange) {
-          americaOverlay.setMap(map);
-          audio.play(); 
-          var limit = (180 - Math.abs(mouseLng)) * 0.01;
-          var vol = 1 - limit;
-          if (vol == 0) {
-            vol = 0.5;
-          }
-          audio.volume = vol;
-          audio.loop = true;
+          glitchType = "america";
+          beforeGlitch = "america";
+          americaAudio.play(); 
+          americaAudio.loop = true;
         } else {
-          americaOverlay.setMap(null);
-          audio.pause(); 
+          choosedOverlay.setMap(null);
+          americaAudio.pause(); 
+          americaAudio.loop = false;
+        }
+
+        var asLatRange = (mouseLat < -10) && (mouseLat > -45);
+        var asLngRange = mouseLng > 110 && mouseLng < 155;
+
+        if (asLatRange && asLngRange) {
+          glitchType = "australia";
+          beforeGlitch = "australia";
+          asAudio.play(); 
+          asAudio.loop = true;
+        } else {
+          choosedOverlay.setMap(null);
+          asAudio.pause(); 
+          asAudio.loop = false;
+        }
+
+        var engLatRange = (mouseLat < 60) && (mouseLat > 47);
+        var engLngRange = mouseLng > -9 && mouseLng < 3;
+
+        if (engLatRange && engLngRange) {
+          glitchType = "england";
+          beforeGlitch = "england";
+          engAudio.play(); 
+          engAudio.loop = true;
+        } else {
+          choosedOverlay.setMap(null);
+          engAudio.pause(); 
+          engAudio.loop = false;
+        }
+
+        if (!(usLatRange && usLngRange) && !(asLatRange && asLngRange) && !(engLatRange && engLngRange)) {
+          beforeGlitch = "";
         }
       }
 
+      function hyoji() {
+          var num = Math.floor(Math.random() * 5) + 1
+
+          if (glitchType !== "") {
+            
+            eval("choosedOverlay" + "=" + glitchType + "Overlay" + num + ";");
+
+            if (glitchType == beforeGlitch) {
+              console.log(choosedOverlay);
+              choosedOverlay.setMap(map);
+              glitchType = beforeGlitch;
+            } else {
+              choosedOverlay.setMap(null);
+            }
+          }
+      }
+      
+      setInterval("hyoji()",10);
+
+
+      // Zoom系の処理
+      /**
+      var isZoomed = false;
+      if (mouseLng < 0 && !isZoomed) {
+        var myLatlng = new google.maps.LatLng(mouseLat, mouseLng);
+        map.setCenter(myLatlng);
+        map.setZoom(3);
+        isZoomed = true;
+      }
+      **/
     </script>
   </head>
   <body onload="initialize()">
     <div id="map_canvas" style="width:100%; height:100%"></div>
+    <div id="" style="color:#fff; font-size:28px; padding:10px;  position:absolute; width: 140px;top:10px; left:10px; background-color: #000; ">
+      FX SOUND
+    </div>
+    <div id="disp" style="color:#fff; font-size:14px; padding:10px;  position:absolute; width: 140px; top:60px; left:10px; background-color: #000; ">
+      JPY ->
+    </div>
+
   </body>
 </html>
