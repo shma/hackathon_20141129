@@ -8,11 +8,11 @@
       #map_canvas { height: 100% }
     </style>
     <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA_RCytoYi52ryjczc1U8LMBa_muJAH9nU&sensor=TRUE_OR_FALSE">
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2ILGksgjm7TFO-bC6DibhBA2B1GwKON8&sensor=TRUE_OR_FALSE">
     </script>
     <script type="text/javascript">
       var App = {};
-      App.maxVolLng = 100;
+      App.usMaxVolLng = 180;
 
       var audio = new Audio("/assets/sound/sample.wav");
       audio.volume = 0;
@@ -30,8 +30,8 @@
       }
 
       function myClickListener(event) {
-        console.log(event.latLng.lat()); 
-        console.log(event.latLng.lng()); 
+        console.log("LAT" + event.latLng.lat()); 
+        console.log("LNG" + event.latLng.lng()); 
       }
 
       function mylistener(event) {
@@ -39,18 +39,26 @@
         mouseLng = event.latLng.lng();
 
         var usLatRange = (mouseLat > 20) && (mouseLat < 50);
-        var usLngRange = (mouseLat > -74) && (mouseLat < 50);
 
-        if (usLatRange) {
+        if (mouseLng < 0) {
+          var usLngRange = mouseLng > -180 && mouseLng < -100;
+        } else if (mouseLng > 0) {
+          var usLngRange = mouseLng < 180 && mouseLng > 140;
+        }
+
+        if (usLatRange && usLngRange) {
           audio.play(); 
-          console.log(audio.volume);
-          if (audio.volume < 0.9) {
-            audio.volume += 0.01;
+          var limit = (180 - Math.abs(mouseLng)) * 0.01;
+
+          var vol = 1 - limit;
+          if (vol == 0) {
+            vol = 0.5;
           }
+          console.log(vol);
+          audio.volume = vol;
         } else {
           audio.pause(); 
         }
-
       }
     </script>
   </head>
