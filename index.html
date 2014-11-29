@@ -11,22 +11,69 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2ILGksgjm7TFO-bC6DibhBA2B1GwKON8&sensor=TRUE_OR_FALSE">
     </script>
     <script type="text/javascript">
+      // Google Map APIのスタイル変更
+      var stylez = [
+        {
+          "stylers": [
+            { "saturation": -100 },
+            { "gamma": 1.11 },
+            { "visibility": "on" },
+            { "invert_lightness": true }
+          ]
+          },{
+            "featureType": "all",
+            "elementType": "labels",
+            "stylers": [
+             { visibility: "off" }
+            ]
+          },
+          {
+          "featureType": "water",
+          "stylers": [
+            { "color": "#ffffff" }
+          ]
+          },{
+          "featureType": "road",
+          "stylers": [
+            { "visibility": "on" },
+            { "color": "#000000" }
+          ]
+        }
+      ];
+
       var App = {};
       App.usMaxVolLng = 180;
 
+      var MY_MAPTYPE_ID = 'cool';
       var audio = new Audio("/assets/sound/sample.wav");
       audio.volume = 0;
+
+      var map;
+      var americaOverlay;
+
       function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(35.6, 139.6),
-          zoom: 3,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          zoom: 2,
+          mapTypeId: MY_MAPTYPE_ID
         };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
+        map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
+
+        var styledMapOptions = {
+          name: "type2"
+        };
+        var jayzMapType = new google.maps.StyledMapType(stylez, styledMapOptions);
+        map.mapTypes.set(MY_MAPTYPE_ID, jayzMapType);
 
         google.maps.event.addListener(map, 'mousemove', mylistener);
         google.maps.event.addListener(map, 'click', myClickListener);
+
+        var imageBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(24.712216,-125.22655),
+          new google.maps.LatLng(49.773941,-61.12544));
+
+        americaOverlay = new google.maps.GroundOverlay("/assets/img/america.png", imageBounds);
       }
 
       function myClickListener(event) {
@@ -38,15 +85,12 @@
         mouseLat = event.latLng.lat();
         mouseLng = event.latLng.lng();
 
-        var usLatRange = (mouseLat > 20) && (mouseLat < 50);
-
-        if (mouseLng < 0) {
-          var usLngRange = mouseLng > -180 && mouseLng < -100;
-        } else if (mouseLng > 0) {
-          var usLngRange = mouseLng < 180 && mouseLng > 140;
-        }
+        var usLatRange = (mouseLat > 30) && (mouseLat < 50);
+        var usLngRange = mouseLng > -125 && mouseLng < -70;
 
         if (usLatRange && usLngRange) {
+          americaOverlay.setMap(map);
+          //map.setZoom(4);
           audio.play(); 
           var limit = (180 - Math.abs(mouseLng)) * 0.01;
 
@@ -57,9 +101,15 @@
           console.log(vol);
           audio.volume = vol;
         } else {
+          americaOverlay.setMap(null);
           audio.pause(); 
         }
       }
+
+      function hyoji() {
+      } 
+
+      setInterval("hyoji()",200);
     </script>
   </head>
   <body onload="initialize()">
