@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color:black;">
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
@@ -15,6 +15,13 @@
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2ILGksgjm7TFO-bC6DibhBA2B1GwKON8&sensor=TRUE_OR_FALSE">
     </script>
     <script type="text/javascript">
+      $('head').append(
+        '<style type="text/css">body {display:none;}'
+      );
+      $(window).load(function() {
+        //$('body').fadeIn(2000);
+        $("body").fadeIn(2000);
+      });
 
       // Google Map APIのスタイル変更
       var stylez = [
@@ -54,11 +61,11 @@
       App.japanCenterLat = "35.6";
       App.japanCenterLng = "139.6";
       App.AmericaLeftLat = "24.712216";
-      App.AmericaLeftLng = "-125.22655";
+      App.AmericaLeftLng = "-126.22655";
       App.AmericaRightLat = "49.773941";
       App.AmericaRightLng = "-66.12544";
-      App.AustraliaLeftLat = "-40.012216";
-      App.AustraliaLeftLng = "111.22655";
+      App.AustraliaLeftLat = "-39.300216";
+      App.AustraliaLeftLng = "112.82655";
       App.AustraliaRightLat = "-10.973941";
       App.AustraliaRightLng = "154.12544";
       App.EnglandLeftLat = "50.012216";
@@ -68,7 +75,7 @@
 
       // 音楽設定
       var americaAudio = new Audio("/assets/sound/USD_JPY.wav");
-      americaAudio.volume = 1;
+      americaAudio.volume = 0;
       americaAudio.loop = false;
 
       var asAudio = new Audio("/assets/sound/AUD_JPY_2.wav");
@@ -154,6 +161,18 @@
 
         var choosedOverlay = americaOverlay1;
         if (usLatRange && usLngRange) {
+          // 126は海岸線の座標
+          dist = Math.abs(mouseLng) - 126;
+          if (dist < 10) {
+            volThreshold = 10 - dist;
+            console.log(volThreshold * 0.09);
+            if ( 1 > (volThreshold * 0.09)) {
+              americaAudio.volume = volThreshold * 0.09;
+            }
+          } else {
+            americaAudio.volume = 1;
+          }
+
           glitchType = "america";
           beforeGlitch = "america";
           americaAudio.play(); 
@@ -166,10 +185,22 @@
           americaAudio.loop = false;
         }
 
-        var asLatRange = (mouseLat < -10) && (mouseLat > -45);
-        var asLngRange = mouseLng > 110 && mouseLng < 155;
+        var asLatRange = (mouseLat < -5) && (mouseLat > -45);
+        var asLngRange = mouseLng > 105 && mouseLng < 155;
 
         if (asLatRange && asLngRange) {
+          dist = 115 - Math.abs(mouseLng);
+          console.log(dist);
+          if (dist < 10) {
+            volThreshold = 10 - dist;
+            console.log(volThreshold * 0.09);
+            if ( 1 > (volThreshold * 0.09)) {
+              asAudio.volume = volThreshold * 0.09;
+            }
+          } else {
+            asAudio.volume = 1;
+          }
+
           glitchType = "australia";
           beforeGlitch = "australia";
           asAudio.play(); 
@@ -183,9 +214,21 @@
         }
 
         var engLatRange = (mouseLat < 60) && (mouseLat > 47);
-        var engLngRange = mouseLng > -9 && mouseLng < 3;
+        var engLngRange = mouseLng > -15 && mouseLng < 3;
 
         if (engLatRange && engLngRange) {
+          dist = Math.abs(mouseLng) - 9;
+          console.log(dist);
+          if (dist < 10) {
+            volThreshold = 10 - dist;
+            console.log(volThreshold * 0.08);
+            if ( 1 > (volThreshold * 0.08)) {
+              engAudio.volume = volThreshold * 0.08;
+            }
+          } else {
+            engAudio.volume = 1;
+          }
+
           glitchType = "england";
           beforeGlitch = "england";
           engAudio.play(); 
@@ -212,7 +255,6 @@
             eval("choosedOverlay" + "=" + glitchType + "Overlay" + num + ";");
 
             if (glitchType == beforeGlitch) {
-              console.log(choosedOverlay);
               choosedOverlay.setMap(map);
               glitchType = beforeGlitch;
             } else {
