@@ -1,0 +1,1330 @@
+{
+features: {
+BEATS: [
+0.25700002909,
+0.75700002909,
+1.2490000725,
+1.7530001402,
+2.2569999695,
+2.745000124,
+3.253000021,
+3.7569999695,
+4.2490005493,
+4.7530002594,
+5.2530002594,
+5.7450003624,
+6.2530002594,
+6.7570004463,
+7.2490005493,
+7.7530007362,
+8.2569999695,
+8.7490005493,
+9.2530002594,
+9.7569999695,
+10.249000549,
+10.753000259,
+11.253000259,
+11.749000549,
+12.253000259,
+12.756999969,
+13.244999886,
+13.753000259,
+14.256999969,
+14.749000549,
+15.253000259,
+15.756999969,
+16.249000549,
+16.753002167,
+17.253002167,
+17.749000549,
+18.253002167,
+18.761001587,
+19.249002457,
+19.753002167,
+20.257001877,
+20.749002457,
+21.253002167,
+21.753002167,
+22.229001999,
+22.693000793,
+23.153001785,
+23.617002487,
+24.081001282,
+24.557001114,
+25.033000946,
+25.517002106,
+26.005001068,
+26.509002686,
+27.005001068,
+27.497001648,
+28.001001358,
+28.501001358,
+28.997001648,
+29.501001358,
+30.001001358,
+30.497001648,
+30.997001648,
+31.493001938,
+31.993003845,
+32.497001648,
+32.993003845,
+33.497001648,
+34.005001068,
+34.505001068,
+35.001003265,
+35.505001068,
+36.001003265,
+36.501003265,
+37.001003265,
+37.497001648,
+37.997001648,
+38.505001068,
+39.001003265,
+39.497001648,
+40.001003265,
+40.501003265,
+40.997001648,
+41.497001648,
+41.993003845,
+42.497001648,
+43.001003265,
+43.497001648,
+43.997001648,
+44.501003265,
+45.001003265,
+45.497001648,
+46.001003265,
+46.505001068,
+47.001003265,
+47.501003265,
+48.005001068,
+48.501003265,
+49.001003265,
+49.505001068,
+50.001003265,
+50.505004883,
+51.001003265,
+51.497001648,
+52.001003265,
+52.497001648,
+52.997001648,
+53.501003265,
+53.997001648,
+54.493003845,
+55.001003265,
+55.493003845,
+55.997001648,
+56.497001648,
+56.989002228,
+57.493003845,
+58.001003265,
+58.497001648,
+58.997001648,
+59.501003265,
+59.993003845,
+60.493003845,
+61.001003265,
+61.497001648,
+61.997005463,
+62.501003265,
+62.989002228,
+63.493003845,
+64.00100708,
+64.497001648,
+64.997001648,
+65.50100708,
+65.997001648,
+66.497001648,
+67.00100708,
+67.497001648,
+67.997001648,
+68.50100708,
+68.993003845,
+69.493003845,
+70.00100708,
+70.50100708,
+70.997001648,
+71.505004883,
+71.993003845,
+72.493003845,
+73.005004883,
+73.493003845,
+73.997001648,
+74.50100708,
+74.989006042,
+75.497001648,
+76.005004883,
+76.497001648,
+76.993003845,
+77.50100708,
+77.993003845,
+78.493003845,
+79.00100708,
+79.497001648,
+79.997001648,
+80.50100708,
+80.989006042,
+81.493003845,
+82.00100708,
+82.497001648,
+82.997001648,
+83.50100708,
+83.997001648,
+84.493003845,
+85.00100708,
+85.497001648,
+85.997001648,
+86.50100708,
+86.993003845,
+87.493003845,
+88.00100708,
+88.497001648,
+88.997001648,
+89.50100708,
+89.997001648,
+90.497001648,
+91.00100708,
+91.493003845,
+91.993003845,
+92.497001648,
+92.989006042,
+93.493003845,
+94.00100708,
+94.50100708,
+94.997001648,
+95.505004883,
+96.00100708,
+96.497001648,
+97.00100708,
+97.497001648,
+97.997001648,
+98.50100708,
+98.997001648,
+99.497001648,
+100.00100708,
+100.49700165,
+100.99700165,
+101.50100708,
+101.99700165,
+102.49700928,
+103.00100708,
+103.49700928,
+103.99700928,
+104.50100708,
+104.98900604,
+105.49300385,
+106.00100708,
+106.50100708,
+106.99700928,
+107.50500488,
+108.00500488,
+108.49700928,
+109.00100708,
+109.50100708,
+109.99700928,
+110.50100708,
+110.99300385,
+111.49300385,
+112.00100708,
+112.49700928,
+112.99700928,
+113.50100708,
+114.00100708,
+114.49700928,
+115.00100708,
+115.49700928,
+115.99700928,
+116.49700928,
+116.98900604,
+117.49300385,
+118.00100708,
+118.50500488,
+118.99700928,
+119.50500488,
+120.00100708,
+120.49300385,
+121.00100708,
+121.49700928,
+121.99700928,
+122.50100708,
+122.98900604,
+123.49300385
+],
+BPM: [
+120.185326
+],
+MOODS: [
+{
+END: 1.5,
+START: 0,
+TYPE: {
+Aggressive: 17,
+Cool: 9,
+Energizing: 51
+}
+},
+{
+END: 2.5,
+START: 1.5,
+TYPE: {
+Cool: 10,
+Energizing: 53,
+Sensual: 13
+}
+},
+{
+END: 3.5,
+START: 2.5,
+TYPE: {
+Cool: 10,
+Energizing: 52,
+Sensual: 15
+}
+},
+{
+END: 4.5,
+START: 3.5,
+TYPE: {
+Defiant: 10,
+Energizing: 54,
+Sensual: 15
+}
+},
+{
+END: 5.5,
+START: 4.5,
+TYPE: {
+Defiant: 12,
+Energizing: 48,
+Sensual: 19
+}
+},
+{
+END: 6.5,
+START: 5.5,
+TYPE: {
+Defiant: 12,
+Energizing: 43,
+Sensual: 22
+}
+},
+{
+END: 7.5,
+START: 6.5,
+TYPE: {
+Defiant: 13,
+Energizing: 40,
+Sensual: 21
+}
+},
+{
+END: 8.5,
+START: 7.5,
+TYPE: {
+Defiant: 12,
+Energizing: 44,
+Sensual: 13
+}
+},
+{
+END: 9.5,
+START: 8.5,
+TYPE: {
+Defiant: 9,
+Energizing: 46,
+Sensual: 16
+}
+},
+{
+END: 10.5,
+START: 9.5,
+TYPE: {
+Cool: 9,
+Energizing: 51,
+Sensual: 9
+}
+},
+{
+END: 11.5,
+START: 10.5,
+TYPE: {
+Brooding: 11,
+Cool: 9,
+Energizing: 47
+}
+},
+{
+END: 12.5,
+START: 11.5,
+TYPE: {
+Brooding: 11,
+Cool: 10,
+Energizing: 49
+}
+},
+{
+END: 13.5,
+START: 12.5,
+TYPE: {
+Brooding: 10,
+Cool: 10,
+Energizing: 43
+}
+},
+{
+END: 14.5,
+START: 13.5,
+TYPE: {
+Brooding: 17,
+Defiant: 12,
+Energizing: 27
+}
+},
+{
+END: 15.5,
+START: 14.5,
+TYPE: {
+Aggressive: 9,
+Brooding: 28,
+Energizing: 20
+}
+},
+{
+END: 16.5,
+START: 15.5,
+TYPE: {
+Aggressive: 9,
+Brooding: 47,
+Energizing: 14
+}
+},
+{
+END: 17.5,
+START: 16.5,
+TYPE: {
+Aggressive: 10,
+Brooding: 52,
+Energizing: 11
+}
+},
+{
+END: 18.5,
+START: 17.5,
+TYPE: {
+Aggressive: 9,
+Brooding: 44,
+Energizing: 15
+}
+},
+{
+END: 19.5,
+START: 18.5,
+TYPE: {
+Aggressive: 8,
+Brooding: 37,
+Energizing: 20
+}
+},
+{
+END: 20.5,
+START: 19.5,
+TYPE: {
+Defiant: 12,
+Energizing: 40,
+Sensual: 11
+}
+},
+{
+END: 21.5,
+START: 20.5,
+TYPE: {
+Defiant: 13,
+Energizing: 38,
+Sensual: 19
+}
+},
+{
+END: 22.5,
+START: 21.5,
+TYPE: {
+Defiant: 11,
+Energizing: 37,
+Sensual: 21
+}
+},
+{
+END: 23.5,
+START: 22.5,
+TYPE: {
+Defiant: 8,
+Energizing: 34,
+Sensual: 21
+}
+},
+{
+END: 24.5,
+START: 23.5,
+TYPE: {
+Brooding: 9,
+Energizing: 37,
+Sensual: 13
+}
+},
+{
+END: 25.5,
+START: 24.5,
+TYPE: {
+Energizing: 42,
+Excited: 12,
+Sensual: 12
+}
+},
+{
+END: 26.5,
+START: 25.5,
+TYPE: {
+Brooding: 13,
+Energizing: 35,
+Sensual: 11
+}
+},
+{
+END: 27.5,
+START: 26.5,
+TYPE: {
+Brooding: 17,
+Energizing: 29,
+Sensual: 12
+}
+},
+{
+END: 28.5,
+START: 27.5,
+TYPE: {
+Brooding: 19,
+Energizing: 30,
+Sensual: 11
+}
+},
+{
+END: 29.5,
+START: 28.5,
+TYPE: {
+Brooding: 13,
+Energizing: 41,
+Sensual: 14
+}
+},
+{
+END: 30.5,
+START: 29.5,
+TYPE: {
+Brooding: 7,
+Energizing: 50,
+Sensual: 10
+}
+},
+{
+END: 31.5,
+START: 30.5,
+TYPE: {
+Brooding: 7,
+Energizing: 52,
+Sensual: 8
+}
+},
+{
+END: 32.5,
+START: 31.5,
+TYPE: {
+Energizing: 38,
+Excited: 14,
+Sensual: 14
+}
+},
+{
+END: 33.5,
+START: 32.5,
+TYPE: {
+Energizing: 18,
+Excited: 23,
+Sensual: 24
+}
+},
+{
+END: 34.5,
+START: 33.5,
+TYPE: {
+Brooding: 51,
+Excited: 16,
+Sensual: 18
+}
+},
+{
+END: 35.5,
+START: 34.5,
+TYPE: {
+Brooding: 45,
+Excited: 20,
+Sensual: 12
+}
+},
+{
+END: 36.5,
+START: 35.5,
+TYPE: {
+Brooding: 24,
+Excited: 26,
+Rowdy: 16
+}
+},
+{
+END: 37.5,
+START: 36.5,
+TYPE: {
+Brooding: 12,
+Excited: 31,
+Rowdy: 27
+}
+},
+{
+END: 38.5,
+START: 37.5,
+TYPE: {
+Brooding: 17,
+Excited: 26,
+Rowdy: 35
+}
+},
+{
+END: 39.5,
+START: 38.5,
+TYPE: {
+Brooding: 17,
+Excited: 29,
+Rowdy: 35
+}
+},
+{
+END: 40.5,
+START: 39.5,
+TYPE: {
+Brooding: 20,
+Excited: 29,
+Rowdy: 31
+}
+},
+{
+END: 41.5,
+START: 40.5,
+TYPE: {
+Brooding: 22,
+Excited: 27,
+Rowdy: 31
+}
+},
+{
+END: 42.5,
+START: 41.5,
+TYPE: {
+Brooding: 19,
+Excited: 24,
+Rowdy: 30
+}
+},
+{
+END: 43.5,
+START: 42.5,
+TYPE: {
+Brooding: 13,
+Excited: 17,
+Rowdy: 29
+}
+},
+{
+END: 44.5,
+START: 43.5,
+TYPE: {
+Brooding: 9,
+Excited: 13,
+Rowdy: 31
+}
+},
+{
+END: 45.5,
+START: 44.5,
+TYPE: {
+Brooding: 9,
+Excited: 16,
+Rowdy: 26
+}
+},
+{
+END: 46.5,
+START: 45.5,
+TYPE: {
+Brooding: 12,
+Excited: 19,
+Rowdy: 28
+}
+},
+{
+END: 47.5,
+START: 46.5,
+TYPE: {
+Brooding: 14,
+Excited: 20,
+Rowdy: 21
+}
+},
+{
+END: 48.5,
+START: 47.5,
+TYPE: {
+Brooding: 17,
+Excited: 22,
+Rowdy: 19
+}
+},
+{
+END: 49.5,
+START: 48.5,
+TYPE: {
+Brooding: 26,
+Excited: 20,
+Rowdy: 20
+}
+},
+{
+END: 50.5,
+START: 49.5,
+TYPE: {
+Brooding: 27,
+Energizing: 13,
+Rowdy: 15
+}
+},
+{
+END: 51.5,
+START: 50.5,
+TYPE: {
+Brooding: 20,
+Energizing: 19,
+Rowdy: 12
+}
+},
+{
+END: 52.5,
+START: 51.5,
+TYPE: {
+Brooding: 14,
+Energizing: 32,
+Sensual: 11
+}
+},
+{
+END: 53.5,
+START: 52.5,
+TYPE: {
+Cool: 5,
+Energizing: 42,
+Sensual: 21
+}
+},
+{
+END: 54.5,
+START: 53.5,
+TYPE: {
+Energizing: 40,
+Other: 11,
+Sensual: 21
+}
+},
+{
+END: 55.5,
+START: 54.5,
+TYPE: {
+Energizing: 28,
+Other: 28,
+Sensual: 23
+}
+},
+{
+END: 56.5,
+START: 55.5,
+TYPE: {
+Energizing: 22,
+Other: 41,
+Sensual: 21
+}
+},
+{
+END: 57.5,
+START: 56.5,
+TYPE: {
+Energizing: 20,
+Other: 26,
+Sensual: 43
+}
+},
+{
+END: 58.5,
+START: 57.5,
+TYPE: {
+Energizing: 20,
+Other: 33,
+Sensual: 36
+}
+},
+{
+END: 59.5,
+START: 58.5,
+TYPE: {
+Energizing: 21,
+Other: 37,
+Sensual: 32
+}
+},
+{
+END: 60.5,
+START: 59.5,
+TYPE: {
+Energizing: 22,
+Other: 35,
+Sensual: 35
+}
+},
+{
+END: 61.5,
+START: 60.5,
+TYPE: {
+Energizing: 30,
+Other: 55,
+Sensual: 5
+}
+},
+{
+END: 62.5,
+START: 61.5,
+TYPE: {
+Energizing: 30,
+Other: 51,
+Sensual: 7
+}
+},
+{
+END: 63.5,
+START: 62.5,
+TYPE: {
+Energizing: 45,
+Other: 30,
+Sensual: 7
+}
+},
+{
+END: 64.5,
+START: 63.5,
+TYPE: {
+Energizing: 47,
+Other: 22,
+Sensual: 11
+}
+},
+{
+END: 65.5,
+START: 64.5,
+TYPE: {
+Energizing: 42,
+Other: 21,
+Sensual: 19
+}
+},
+{
+END: 66.5,
+START: 65.5,
+TYPE: {
+Energizing: 42,
+Other: 15,
+Sensual: 23
+}
+},
+{
+END: 67.5,
+START: 66.5,
+TYPE: {
+Energizing: 36,
+Other: 15,
+Sensual: 25
+}
+},
+{
+END: 68.5,
+START: 67.5,
+TYPE: {
+Energizing: 40,
+Other: 25,
+Sensual: 12
+}
+},
+{
+END: 69.5,
+START: 68.5,
+TYPE: {
+Energizing: 36,
+Melancholy: 12,
+Other: 25
+}
+},
+{
+END: 70.5,
+START: 69.5,
+TYPE: {
+Energizing: 34,
+Other: 31,
+Sensual: 14
+}
+},
+{
+END: 71.5,
+START: 70.5,
+TYPE: {
+Energizing: 30,
+Other: 32,
+Sensual: 28
+}
+},
+{
+END: 72.5,
+START: 71.5,
+TYPE: {
+Energizing: 13,
+Other: 22,
+Sensual: 60
+}
+},
+{
+END: 73.5,
+START: 72.5,
+TYPE: {
+Energizing: 10,
+Other: 25,
+Sensual: 62
+}
+},
+{
+END: 74.5,
+START: 73.5,
+TYPE: {
+Energizing: 3,
+Other: 21,
+Sensual: 73
+}
+},
+{
+END: 75.5,
+START: 74.5,
+TYPE: {
+Energizing: 4,
+Other: 19,
+Sensual: 73
+}
+},
+{
+END: 76.5,
+START: 75.5,
+TYPE: {
+Energizing: 6,
+Other: 24,
+Sensual: 66
+}
+},
+{
+END: 77.5,
+START: 76.5,
+TYPE: {
+Energizing: 13,
+Other: 40,
+Sensual: 43
+}
+},
+{
+END: 78.5,
+START: 77.5,
+TYPE: {
+Energizing: 7,
+Other: 24,
+Sensual: 65
+}
+},
+{
+END: 79.5,
+START: 78.5,
+TYPE: {
+Energizing: 34,
+Other: 41,
+Sensual: 21
+}
+},
+{
+END: 80.5,
+START: 79.5,
+TYPE: {
+Energizing: 22,
+Other: 49,
+Sensual: 26
+}
+},
+{
+END: 81.5,
+START: 80.5,
+TYPE: {
+Energizing: 21,
+Other: 65,
+Sensual: 11
+}
+},
+{
+END: 82.5,
+START: 81.5,
+TYPE: {
+Energizing: 24,
+Other: 57,
+Sensual: 17
+}
+},
+{
+END: 83.5,
+START: 82.5,
+TYPE: {
+Energizing: 23,
+Other: 60,
+Sensual: 14
+}
+},
+{
+END: 84.5,
+START: 83.5,
+TYPE: {
+Energizing: 27,
+Other: 61,
+Sensual: 8
+}
+},
+{
+END: 85.5,
+START: 84.5,
+TYPE: {
+Energizing: 40,
+Other: 50,
+Sensual: 3
+}
+},
+{
+END: 86.5,
+START: 85.5,
+TYPE: {
+Energizing: 32,
+Melancholy: 8,
+Other: 46
+}
+},
+{
+END: 87.5,
+START: 86.5,
+TYPE: {
+Energizing: 38,
+Melancholy: 12,
+Other: 30
+}
+},
+{
+END: 88.5,
+START: 87.5,
+TYPE: {
+Energizing: 38,
+Melancholy: 16,
+Other: 21
+}
+},
+{
+END: 89.5,
+START: 88.5,
+TYPE: {
+Energizing: 33,
+Melancholy: 15,
+Other: 13
+}
+},
+{
+END: 90.5,
+START: 89.5,
+TYPE: {
+Energizing: 29,
+Melancholy: 19,
+Sensual: 12
+}
+},
+{
+END: 91.5,
+START: 90.5,
+TYPE: {
+Energizing: 26,
+Melancholy: 17,
+Other: 17
+}
+},
+{
+END: 92.5,
+START: 91.5,
+TYPE: {
+Energizing: 31,
+Melancholy: 13,
+Other: 27
+}
+},
+{
+END: 93.5,
+START: 92.5,
+TYPE: {
+Energizing: 30,
+Other: 34,
+Sensual: 12
+}
+},
+{
+END: 94.5,
+START: 93.5,
+TYPE: {
+Energizing: 31,
+Other: 40,
+Sensual: 10
+}
+},
+{
+END: 95.5,
+START: 94.5,
+TYPE: {
+Energizing: 41,
+Other: 24,
+Sensual: 13
+}
+},
+{
+END: 96.5,
+START: 95.5,
+TYPE: {
+Energizing: 40,
+Other: 10,
+Sensual: 25
+}
+},
+{
+END: 97.5,
+START: 96.5,
+TYPE: {
+Brooding: 9,
+Energizing: 38,
+Sensual: 24
+}
+},
+{
+END: 98.5,
+START: 97.5,
+TYPE: {
+Cool: 10,
+Energizing: 34,
+Sensual: 27
+}
+},
+{
+END: 99.5,
+START: 98.5,
+TYPE: {
+Cool: 15,
+Energizing: 35,
+Sensual: 21
+}
+},
+{
+END: 100.5,
+START: 99.5,
+TYPE: {
+Defiant: 11,
+Energizing: 46,
+Sensual: 13
+}
+},
+{
+END: 101.5,
+START: 100.5,
+TYPE: {
+Defiant: 14,
+Energizing: 47,
+Sensual: 15
+}
+},
+{
+END: 102.5,
+START: 101.5,
+TYPE: {
+Cool: 13,
+Defiant: 14,
+Energizing: 49
+}
+},
+{
+END: 103.5,
+START: 102.5,
+TYPE: {
+Defiant: 16,
+Energizing: 48,
+Sensual: 10
+}
+},
+{
+END: 104.5,
+START: 103.5,
+TYPE: {
+Defiant: 12,
+Energizing: 42,
+Sensual: 11
+}
+},
+{
+END: 105.5,
+START: 104.5,
+TYPE: {
+Defiant: 10,
+Energizing: 38,
+Sensual: 17
+}
+},
+{
+END: 106.5,
+START: 105.5,
+TYPE: {
+Cool: 11,
+Energizing: 38,
+Sensual: 18
+}
+},
+{
+END: 107.5,
+START: 106.5,
+TYPE: {
+Cool: 12,
+Energizing: 40,
+Sensual: 13
+}
+},
+{
+END: 108.5,
+START: 107.5,
+TYPE: {
+Cool: 13,
+Energizing: 42,
+Sensual: 16
+}
+},
+{
+END: 109.5,
+START: 108.5,
+TYPE: {
+Defiant: 12,
+Energizing: 49,
+Sensual: 12
+}
+},
+{
+END: 110.5,
+START: 109.5,
+TYPE: {
+Cool: 12,
+Defiant: 12,
+Energizing: 54
+}
+},
+{
+END: 111.5,
+START: 110.5,
+TYPE: {
+Defiant: 12,
+Energizing: 57,
+Sensual: 8
+}
+},
+{
+END: 112.5,
+START: 111.5,
+TYPE: {
+Defiant: 9,
+Energizing: 58,
+Sensual: 8
+}
+},
+{
+END: 113.5,
+START: 112.5,
+TYPE: {
+Defiant: 7,
+Energizing: 59,
+Sensual: 12
+}
+},
+{
+END: 114.5,
+START: 113.5,
+TYPE: {
+Cool: 7,
+Energizing: 61,
+Sensual: 9
+}
+},
+{
+END: 115.5,
+START: 114.5,
+TYPE: {
+Cool: 9,
+Energizing: 56,
+Sensual: 10
+}
+}
+],
+SEGMENT: [
+{
+END: 31.68,
+START: 0,
+TEXT: "Verse",
+TYPE: "Verse"
+},
+{
+END: 52.08,
+START: 31.68,
+TEXT: "Part A",
+TYPE: "a"
+},
+{
+END: 69.84,
+START: 52.08,
+TEXT: "Chorus",
+TYPE: "Chorus"
+},
+{
+END: 84.96,
+START: 69.84,
+TEXT: "Part B",
+TYPE: "b"
+},
+{
+END: 123.84,
+START: 84.96,
+TEXT: "Chorus",
+TYPE: "Chorus"
+}
+]
+},
+filename: "AUD_JPY_2.mp3",
+id: "478",
+progress: "1.0",
+status: "0"
+}

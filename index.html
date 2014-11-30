@@ -74,22 +74,29 @@
       App.EnglandRightLng = "2.12544";
 
       // 音楽設定
-      var americaAudio = new Audio("/assets/sound/USD_JPY.wav");
+      var americaAudio = new Audio("/assets/sound/USD_JPY.mp3");
       americaAudio.volume = 0;
       americaAudio.loop = false;
 
-      var asAudio = new Audio("/assets/sound/AUD_JPY_2.wav");
+      var asAudio = new Audio("/assets/sound/AUD_JPY.mp3");
       asAudio.volume = 1;
       asAudio.loop = false;
 
-      var engAudio = new Audio("/assets/sound/GBP_JPY_2.wav");
+      var engAudio = new Audio("/assets/sound/GBP_JPY.mp3");
       engAudio.volume = 1;
       engAudio.loop = false;
 
       // Mapの初期化
       var map;
 
+      var graceus = ["Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Excited","Excited","Excited","Excited","Excited","Rowdy","Excited","Rowdy","Aggressive","Aggressive","Excited","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Defiant","Defiant","Defiant","Defiant","Defiant","Defiant","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Defiant","Excited","Rowdy","Excited","Excited","Excited","Excited"];
+
+      var graceas = ["Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Brooding","Brooding","Brooding","Brooding","Brooding","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Sensual","Brooding","Brooding","Excited","Excited","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Rowdy","Excited","Brooding","Brooding","Brooding","Energizing","Energizing","Energizing","Energizing","Other","Other","Sensual","Sensual","Other","Other","Sensual","Other","Other","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Other","Sensual","Sensual","Sensual","Sensual","Sensual","Sensual","Sensual","Other","Other","Other","Other","Other","Other","Other","Other","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Other","Other","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing","Energizing"];
+
+      var gracegb = ["Sensual","Sensual","Sensual","Energizing","Energizing","Sensual","Sensual","Sensual","Sensual","Sensual","Sensual","Energizing","Energizing","Energizing","Sensual","Sensual","Sensual","Sensual","Sensual","Energizing","Energizing","Energizing","Energizing","Sensual","Sensual","Sensual","Brooding","Sensual","Energizing","Energizing","Energizing","Sensual","Sensual","Empowering","Empowering","Empowering","Empowering","Sensual","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Sensual","Sensual","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Rowdy","Rowdy","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Melancholy","Rowdy","Rowdy","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Sensual","Melancholy","Sensual","Brooding","Empowering","Brooding","Empowering","Empowering","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Rowdy","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Brooding","Rowdy","Rowdy","Rowdy","Brooding","Brooding","Brooding","Brooding","Brooding","Rowdy","Brooding","Fun","Brooding","Brooding","Brooding","Brooding"];
+
       function initialize() {
+
         var mapOptions = {
           // 日本を中心にする
           center: new google.maps.LatLng(App.japanCenterLat, App.japanCenterLng),
@@ -165,7 +172,6 @@
           dist = Math.abs(mouseLng) - 126;
           if (dist < 10) {
             volThreshold = 10 - dist;
-            console.log(volThreshold * 0.09);
             if ( 1 > (volThreshold * 0.09)) {
               americaAudio.volume = volThreshold * 0.09;
             }
@@ -177,6 +183,7 @@
           beforeGlitch = "america";
           americaAudio.play(); 
           americaAudio.loop = true;
+
           jQuery("#disp").html("JPY <-> USD");
           jQuery("#disp").show();
         } else {
@@ -190,10 +197,8 @@
 
         if (asLatRange && asLngRange) {
           dist = 115 - Math.abs(mouseLng);
-          console.log(dist);
           if (dist < 10) {
             volThreshold = 10 - dist;
-            console.log(volThreshold * 0.09);
             if ( 1 > (volThreshold * 0.09)) {
               asAudio.volume = volThreshold * 0.09;
             }
@@ -218,10 +223,8 @@
 
         if (engLatRange && engLngRange) {
           dist = Math.abs(mouseLng) - 9;
-          console.log(dist);
           if (dist < 10) {
             volThreshold = 10 - dist;
-            console.log(volThreshold * 0.08);
             if ( 1 > (volThreshold * 0.08)) {
               engAudio.volume = volThreshold * 0.08;
             }
@@ -243,6 +246,7 @@
 
         if (!(usLatRange && usLngRange) && !(asLatRange && asLngRange) && !(engLatRange && engLngRange)) {
           beforeGlitch = "";
+          $(".gracenotesay").html("");
           jQuery("#disp").hide();
         }
       }
@@ -253,7 +257,6 @@
           if (glitchType !== "") {
             
             eval("choosedOverlay" + "=" + glitchType + "Overlay" + num + ";");
-
             if (glitchType == beforeGlitch) {
               choosedOverlay.setMap(map);
               glitchType = beforeGlitch;
@@ -264,11 +267,25 @@
       }
       
       setInterval("hyoji()",10);
+
+
+      function checkAudioTime() {
+        if ((glitchType == beforeGlitch) && glitchType == "america") {
+          $(".gracenotesay").html(graceus[Math.round(americaAudio.currentTime)]);
+        }
+        if ((glitchType == beforeGlitch) && glitchType == "australia") {
+          $(".gracenotesay").html(graceas[Math.round(asAudio.currentTime)]);
+        }
+        if ((glitchType == beforeGlitch) && glitchType == "england") {
+          $(".gracenotesay").html(gracegb[Math.round(engAudio.currentTime)]);
+        }
+      }
+
+      setInterval("checkAudioTime()",1000);
  
      var zoomVal = 3;
      jQuery(document).keypress(function (e) {
          var c = String.fromCharCode(e.which);
-         console.log(c);
          if (c == 1) {
            var myLatlng = new google.maps.LatLng(App.japanCenterLat, App.japanCenterLng);
            map.setCenter(myLatlng);
@@ -297,6 +314,7 @@
             return false;
         });
 
+
         jQuery('.moveGb').on('click', function () {
             var asCenterLat = 54; 
             var asCenterLng = 0;
@@ -322,6 +340,10 @@
       </ul>
     </div>
     <div id="disp" class="uk-text-center" style="display:none; color:#fff; font-size:14px; padding:10px;  position:absolute; width: 160px; top:200px; left:10px; background-color: #000; ">
+    </div>
+    <div id="grace" class="uk-text-center" style="color:#fff; font-size:14px; padding:10px;  position:absolute; width: 200px; height: 100px; top:500px; left:10px; background-color: #000; ">
+     <p>Gracenote Said...</p>
+     <p class="gracenotesay" style="font-size: 25px;"></p>
     </div>
   </body>
 </html>
